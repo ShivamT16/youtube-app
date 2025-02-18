@@ -1,0 +1,33 @@
+.videoCard{
+    /* border: 1px solid black; */
+    width: min-content;
+    text-align: left;
+    margin: 1rem;
+    cursor: pointer;
+}
+.thumbnail{
+    border-radius: 1rem;
+}
+.thumbnail:hover{
+    border-radius: 0rem;
+}
+.videoTitle{
+    /* border: 1px solid red; */
+    margin: .2rem 0rem;
+    font-weight: 500;
+}
+.videoChannel{
+    font-size: small;
+    color: gray;
+    margin: 0rem 0rem;
+}
+.videoViewCount{
+    font-size: small;
+    color: gray;
+    margin: 0.2rem 0rem;
+}
+.videoPublishAt{
+    font-size: small;
+    color: gray;
+    margin: .2rem 0rem;
+}
