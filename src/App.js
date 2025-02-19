@@ -1,5 +1,5 @@
+import { Outlet } from 'react-router-dom';
 import './App.css';
-import Body from './components/AppBody';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 
@@ -9,7 +9,7 @@ function App() {
       <Header />
       <div className="app-body">
         <Sidebar />
-        <Body />
+        <Outlet />
       </div>
     </div>
   );

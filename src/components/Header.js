@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import "./header.css"
 import { AppContext } from "../context/AppContext";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const {handleSideDrawer} = useContext(AppContext);
@@ -11,7 +12,8 @@ const Header = () => {
         <div className="header-left">
         <img className="sideBar-icon" onClick={() => handleSideDrawer()} alt="icon" src='https://cdn.iconscout.com/icon/free/png-256/free-hamburger-menu-icon-download-in-svg-png-gif-file-formats--crispy-user-interface-pack-icons-462145.png' />
 
-        <img className="youtube-icon" alt="logo" src='https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7zHKjfxq6y9ShogWtMBMPyB3jiNps91LoNH8A=s500' />
+        <Link to="/">
+        <img className="youtube-icon" alt="logo" src='https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7zHKjfxq6y9ShogWtMBMPyB3jiNps91LoNH8A=s500' /> </Link>
         </div>
 
         <div className="header-center">

@@ -1,9 +1,14 @@
-.videoCard{
-    /* border: 1px solid black; */
+.videoCard-main{
+    /* border: 1px solid red; */
     width: min-content;
     text-align: left;
     margin: 1rem;
     cursor: pointer;
+}
+.videoCard{
+    /* border: 1px solid black; */
+    color: black;
+    text-decoration: none;
 }
 .thumbnail{
     border-radius: 1rem;
