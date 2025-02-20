@@ -4,12 +4,12 @@ import { useSearchParams } from 'react-router-dom'
 import "./watchPage.css"
 
 const WatchPage = () => {
-    const {setSideDrawer} = useContext(AppContext)
+    const {closeSideDrawer} = useContext(AppContext)
     const [searchParams] = useSearchParams();
 
     useEffect(() => {
-        setSideDrawer(false)
-    }, [setSideDrawer])
+      closeSideDrawer()
+    }, [])
 
   return (
     <div className='watchPage-main'>

@@ -11,6 +11,16 @@ const Body = () => {
     getVideo()
   }, [])
 
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   fetch("https://api.example.com/data")
+  //   .then((json) => setData([...data, ...json]))
+  //   .catch((error) => console.error(error));
+  // }, [])
+
+  // console.log(fetch("http://suggestqueries.google.com/complete/search?client=chrome&ds=yt&q=bewajah"))
+
   const getVideo = async () => {
     const response = await fetch(YOUTUBE_VIDEOS_URL)
     const data = await response.json()

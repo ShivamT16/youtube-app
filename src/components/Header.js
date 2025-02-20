@@ -1,10 +1,29 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./header.css"
 import { AppContext } from "../context/AppContext";
 import { Link } from "react-router-dom";
+import { YOUTUBE_SEARCH_API } from "../utils/constants";
 
 const Header = () => {
+    const [searchQuery, setSearchQuery] = useState("")
     const {handleSideDrawer} = useContext(AppContext);
+    // console.log(searchQuery);
+
+    useEffect(() => {
+
+     const timer = setTimeout(() => { getSearchSuggestions() }, 200);
+
+     return() => {
+       clearTimeout(timer())
+     }
+
+    }, [searchQuery])
+
+    const getSearchSuggestions = async () => {
+      const response = await fetch(YOUTUBE_SEARCH_API + searchQuery)
+      const json = await response.json()
+      console.log(json[1]) 
+    }
 
   return (
     <header className='header-main'>
@@ -17,7 +36,7 @@ const Header = () => {
         </div>
 
         <div className="header-center">
-        <input className="search-input" type="text" />
+        <input className="search-input" type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
         <button className="search-btn">🔍</button>
         </div>
 
