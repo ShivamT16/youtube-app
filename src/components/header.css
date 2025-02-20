@@ -45,6 +45,15 @@
 .search-btn:hover{
     background-color: lightgray
 }
+.suggestions{
+    position: fixed;
+    background-color: white;
+    width: 26rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 4px gray;
+    text-align: left;
+    margin: .2rem 0.5rem;
+}
 
 .user-icon{
     height: 2rem;
