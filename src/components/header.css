@@ -53,6 +53,18 @@
     box-shadow: 0 0 4px gray;
     text-align: left;
     margin: .2rem 0.5rem;
+    padding: .8rem 0rem;
+}
+.suggestion-list{
+    display: flex;
+    flex-direction: column;
+    padding: .3rem 1rem;
+    color: black;
+    text-decoration: none;
+    cursor: default;
+}
+.suggestion-list:hover{
+    background-color: rgb(240, 238, 238);
 }
 
 .user-icon{

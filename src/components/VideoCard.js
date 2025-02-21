@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import './videoCard.css'
 
 const VideoCard = ({video}) => {
-    // console.log({video})
+
   return (
     <div className='videoCard-main'>
         <Link to={`/watch?v=${video?.id}`} className='videoCard'>

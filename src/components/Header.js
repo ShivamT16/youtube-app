@@ -47,9 +47,11 @@ const Header = () => {
           <input className="search-input" type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
           <button className="search-btn">🔍</button>
          </div>
+
+         { searchSuggestion.length > 0 &&
          <div className="suggestions">
-          {searchSuggestion.map((suggestions) => <ul key={suggestions}>{suggestions}</ul>)}
-         </div>
+          { searchSuggestion.map((suggestions) => <Link to={"/results?search_query="+suggestions} onClick={() => setSearchSuggestions([])} className="suggestion-list" key={suggestions}>{suggestions} </Link>)}
+         </div> }
         </div>
 
         <img className="user-icon" alt="user" src='https://icons.veryicon.com/png/o/miscellaneous/two-color-icon-library/user-286.png' />

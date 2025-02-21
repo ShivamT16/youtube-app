@@ -1,0 +1,25 @@
+.searchResult-card{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 2rem;
+}
+.searchResult-image{
+    border-radius: 1rem;
+}
+.searchResult-image:hover{
+    border-radius: 0rem;
+}
+.searchResult-details{
+    width: 65%;
+    text-align: left;
+    font-weight: 600;
+    font-size: large;
+    padding: 0rem 1rem;
+}
+.searchResult-description{
+    font-size: medium;
+    font-weight: 500;
+    color: rgb(68, 67, 67);
+}
