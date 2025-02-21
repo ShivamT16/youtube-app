@@ -7,11 +7,17 @@ import { YOUTUBE_SEARCH_API } from "../utils/constants";
 const Header = () => {
     const [searchQuery, setSearchQuery] = useState("")
     const [searchSuggestion, setSearchSuggestions] = useState([])
-    const {handleSideDrawer} = useContext(AppContext);
+    const {handleSideDrawer,cacheResult, handleCacheResult} = useContext(AppContext);
 
     useEffect(() => {
 
-     const timer = setTimeout(() => { getSearchSuggestions() }, 200);
+     const timer = setTimeout(() => { 
+       if(cacheResult[searchQuery]) {
+        setSearchSuggestions(cacheResult[searchQuery])
+       }
+       else{
+      getSearchSuggestions()} 
+      }, 200);
 
      return() => {
        clearTimeout(timer)
@@ -22,7 +28,8 @@ const Header = () => {
     const getSearchSuggestions = async () => {
       const response = await fetch(YOUTUBE_SEARCH_API + searchQuery)
       const json = await response.json()
-      setSearchSuggestions(json[1]) 
+      setSearchSuggestions(json[1])
+      handleCacheResult({[searchQuery]: json[1]}) 
     }
 
   return (
@@ -41,7 +48,7 @@ const Header = () => {
           <button className="search-btn">🔍</button>
          </div>
          <div className="suggestions">
-          {searchSuggestion.map((suggestions) => <ul>{suggestions}</ul>)}
+          {searchSuggestion.map((suggestions) => <ul key={suggestions}>{suggestions}</ul>)}
          </div>
         </div>
 
