@@ -1,0 +1,24 @@
+.comments-main{
+    width: 70%;
+}
+.comments-card{
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin: 1rem 0rem;
+}
+.comments-userImage{
+    height: 2rem;
+    border-radius: 1rem;
+    font-size: xx-small;
+    margin: 4px 0rem;
+}
+.comments-userName{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.comment{
+    margin: 0rem;
+    font-size: small;
+}

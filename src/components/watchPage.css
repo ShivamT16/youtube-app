@@ -1,6 +1,20 @@
 .watchPage-main{
     padding: 1rem 3rem;
+    width: 100%;
+    text-align: left;
+}
+.watchPage-container{
+    display: flex;
+    gap: 2rem;
 }
 .videoFrame{
     border-radius: 1rem;
+}
+.watchPage-video-detail{
+    width: 68%;
+}
+.watchPage-video-description{
+    background-color: rgb(241, 237, 237);
+    border-radius: 10px;
+    padding: 10px;
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { YOUTUBE_VIDEOS_URL } from '../utils/constants'
+import { YOUTUBE_VIDEOS_API } from '../utils/constants'
 import VideoCard from './VideoCard';
 import "./appBody.css"
 
@@ -12,7 +12,7 @@ const Body = () => {
   }, [])
 
   const getVideo = async () => {
-    const response = await fetch(YOUTUBE_VIDEOS_URL)
+    const response = await fetch(YOUTUBE_VIDEOS_API)
     const data = await response.json()
     setVideos(data.items)
   }

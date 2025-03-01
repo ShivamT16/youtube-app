@@ -1,0 +1,41 @@
+.liveChat-main{
+    width: 100%;
+    padding: .2rem;
+    border: 1px solid lightgrey;
+    border-radius: 1rem;
+}
+.liveChat-heading{
+    padding: 0rem 2rem;
+    margin: 0rem;
+    text-align: left;
+    font-weight: 500;
+    border-bottom: 1px solid lightgray;
+    /* border-radius: 1rem 1rem 0rem 0rem; */
+}
+.liveChat{
+    /* border: 1px solid lightgray; */
+    width: 100%;
+    /* border-radius: 0rem 0rem 1rem 1rem; */
+    display: flex;
+    flex-direction: column-reverse;
+    height: 68vh;
+    overflow-y: scroll;
+}
+.chatMessage-main{
+    /* border: 1px solid black; */
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    margin: 0rem 1rem;
+    text-align: left;
+}
+.chat-user{
+    height: 1.5rem;
+}
+.chat-userName{
+    font-weight: 500;
+    margin-right: .4rem;
+}
+.chat-message{
+   margin: .4rem 0rem;
+}
