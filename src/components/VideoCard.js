@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import './videoCard.css'
+import { convertIntoMillions, timeSinceCreation } from '../utils/utilsFunctions'
 
 const VideoCard = ({video}) => {
 
@@ -9,7 +10,7 @@ const VideoCard = ({video}) => {
          <img className='thumbnail' alt="thumbnail" src={video?.snippet?.thumbnails?.medium?.url} />
          <p className='videoTitle'> {video?.snippet?.title}</p>
          <p className='videoChannel'>{video?.snippet?.channelTitle}</p>
-         <p className='videoViewCount'>{video?.statistics?.viewCount} views * {video?.snippet?.publishedAt}</p>
+         <p className='videoViewCount'>{convertIntoMillions(video?.statistics?.viewCount)} views * {timeSinceCreation(video?.snippet?.publishedAt)}</p>
          {/* <p className='videoPublishAt'>{video?.snippet?.publishedAt}</p> */}
         </Link>
     </div>
