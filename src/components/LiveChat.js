@@ -1,15 +1,18 @@
-import { useContext, useEffect } from "react"
+import { useEffect } from "react"
 import "./liveChat.css"
-import { AppContext } from "../context/AppContext"
+
 import { generateName, makeRandomCharacter } from "../utils/randomFunctions"
+import { useDispatch, useSelector } from "react-redux"
+import { handleLiveChat } from "../utils/chatSlice"
 
 export const LiveChat = () => {
-    const {handleLiveChat, liveMessages} = useContext(AppContext)
+    const dispatch = useDispatch()
+    const messages = useSelector(store => store.chat.messages);
 
     useEffect(() => {
 
       const i = setInterval(() => {
-        handleLiveChat({name: generateName(), message: makeRandomCharacter(10) })
+        dispatch(handleLiveChat({name: generateName(), message: makeRandomCharacter(10) }))
         }, 500);
 
       return() =>{
@@ -22,7 +25,7 @@ export const LiveChat = () => {
       <h2 className="liveChat-heading"> Live Chat </h2>
     <div className='liveChat'>
       {
-        liveMessages.map(({name, message}, index) => 
+        messages.map(({name, message}, index) => 
           <div className="chatMessage-main" key={index}>
             <img className="chat-user" alt="userProfile" src='https://icons.veryicon.com/png/o/miscellaneous/two-color-icon-library/user-286.png' />
             <p className="chat-message"> <span className="chat-userName">{name}</span> {message} </p>

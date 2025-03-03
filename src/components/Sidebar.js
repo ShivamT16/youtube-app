@@ -1,13 +1,12 @@
-import { useContext } from 'react'
 import './sidebar.css'
-import { AppContext } from '../context/AppContext'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Sidebar = () => {
 
-  const {sideDrawer} = useContext(AppContext);
+  const isSidebarOpen = useSelector(store => store.app.isSidebarOpen)
 
-  if(!sideDrawer) return null;
+  if(!isSidebarOpen) return null;
 
   return (
     <div className='sidebar-main'>

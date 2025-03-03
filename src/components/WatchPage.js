@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { AppContext } from '../context/AppContext'
+import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import "./watchPage.css"
 import {LiveChat} from './LiveChat'
@@ -7,15 +6,17 @@ import ShowComments from './ShowComments'
 import { YOUTUBE_VIDEO_COMMENTS_API, YOUTUBE_VIDEO_DETAIL_API } from '../utils/constants'
 import { convertIntoMillions } from '../utils/utilsFunctions'
 import Description from './Description'
+import { closeSidebar } from '../utils/appSlice'
+import { useDispatch } from 'react-redux'
 
 const WatchPage = () => {
-    const {closeSideDrawer} = useContext(AppContext)
+    const dispatch = useDispatch()
     const [searchParams] = useSearchParams();
     const [videoDetail, setVideoDetail] = useState('')
     const [comments, setComments] = useState([])
 
     useEffect(() => {
-      closeSideDrawer();
+      dispatch(closeSidebar())
       getVideoDetails();
       getComments();
       window.scrollTo(0 , 0)
