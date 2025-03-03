@@ -1,0 +1,43 @@
+.shimmer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+.shimmerCard{
+    background-color: rgb(245, 241, 241);
+    border-radius: 0.5rem;
+    width: 18%;
+    height: 30%;
+    padding: 2rem;
+}
+
+.shimmer-search-card{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.shimmerCard-left{
+   width: 20%;
+}
+.shimmer-card-left{
+    background-color: rgb(245, 241, 241);
+    padding: 2rem;
+    width: 80%;
+    height: 20%;
+    border-radius: 0.5rem;
+}
+
+.shimmerCard-right{
+    width: 65%;
+}
+.shimmer-card-right{
+    background-color: rgb(245, 241, 241);
+    padding: 2rem;
+    width: 100%;
+    height: 20%;
+    border-radius: 0.5rem;
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { YOUTUBE_SEARCH_RESULTS_API } from '../utils/constants'
 import './searchResult.css'
+import { ShimmerSearch } from './Shimmer'
 
 const SearchResult = () => {
 
@@ -24,6 +25,7 @@ const SearchResult = () => {
   }
 
   return (
+    searchResults?.length <=0 ? <ShimmerSearch /> :
     <div className='searchResult-main'>
      {searchResults.map((searchResults) => 
       <Link className='searchResult-card' to={`/watch?v=${searchResults?.id?.videoId}`}> 

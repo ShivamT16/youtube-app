@@ -8,6 +8,7 @@ import Body from './components/AppBody';
 import WatchPage from './components/WatchPage';
 import SearchResult from './components/SearchResult';
 import ErrorPage from './components/ErrorPage';
+import { Shimmer } from './components/Shimmer';
 
 const appRouter = createBrowserRouter([
   {
@@ -16,7 +17,8 @@ const appRouter = createBrowserRouter([
     children: [
     {path:"/", element: <Body/>},
     {path: "/watch", element: <WatchPage /> },
-    {path: "/results", element: <SearchResult />}
+    {path: "/results", element: <SearchResult />},
+    {path: "/shimmer", element: <Shimmer />}
     ],
     errorElement: <ErrorPage />
   }
