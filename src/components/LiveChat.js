@@ -9,9 +9,9 @@ export const LiveChat = () => {
 
       const i = setInterval(() => {
 
-        // handleLiveChat({name: "adam", message: "youtube"})
-        // handleLiveChat({name: "adam", message: "youtube222"})
-        }, 1000);
+        // handleLiveChat({name: "adam", message: Math.random() * 10 })
+
+        }, 500);
 
       return() =>{
         clearInterval(i)

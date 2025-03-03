@@ -1,24 +1,45 @@
 import './showComments.css'
 import { Link } from 'react-router-dom'
 import { convertStringsIntoLink } from '../utils/utilsFunctions'
+import Description from './Description'
 
 const ShowComments = ({comment}) => {
   return (
     <div className='comments-main'>
     
-    <h2> {comment.length} Comments</h2>
-
+    <h2> {comment?.length} Comments</h2>
+    
     {comment.map((comment) => 
-    <div className='comments-card' key={comment?.id}>
-        <img className='comments-userImage' alt="user" src={comment?.snippet?.topLevelComment?.snippet?.authorProfileImageUrl} /> 
-        <div>
-        <Link className='comments-userName' to={comment?.snippet?.topLevelComment?.snippet?.authorChannelUrl} >{comment?.snippet?.topLevelComment?.snippet?.authorDisplayName}</Link>
-        <p className='comment' style={{whiteSpace: "pre-wrap"}}>{convertStringsIntoLink(comment?.snippet?.topLevelComment?.snippet?.textOriginal)}</p>
+      <div key={comment?.id}>     
+       <ShowReplies className='comments-card' key={comment?.id} comment={comment?.snippet?.topLevelComment} />
+       
+        <div className='replies'>
+        <p className='replies-count'>{comment?.replies?.comments?.length && comment?.replies?.comments?.length + ' Replies'}</p>
+         {comment?.replies?.comments.map(replies =>  
+           <ShowReplies key={replies?.id} comment={replies} />
+         )}
         </div>
-    </div> )}
+      </div> )}
 
     </div>
   )
 }
 
 export default ShowComments
+
+const ShowReplies = ({comment}) => {
+
+  return(
+    <div className='comments-main'>
+
+    <div className='comments-card' key={comment?.id}>
+        <img className='comments-userImage' alt="user" src={comment?.snippet?.authorProfileImageUrl } /> 
+        <div>
+        <Link className='comments-userName' to={comment?.snippet?.authorChannelUrl} >{comment?.snippet.authorDisplayName}</Link>
+        <p className='comment' style={{whiteSpace: "pre-wrap"}}> <Description description={comment?.snippet?.textOriginal} /> </p>
+        </div>
+    </div> 
+
+    </div>
+  )
+}

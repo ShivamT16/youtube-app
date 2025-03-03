@@ -11,7 +11,6 @@ const VideoCard = ({video}) => {
          <p className='videoTitle'> {video?.snippet?.title}</p>
          <p className='videoChannel'>{video?.snippet?.channelTitle}</p>
          <p className='videoViewCount'>{convertIntoMillions(video?.statistics?.viewCount)} views * {timeSinceCreation(video?.snippet?.publishedAt)}</p>
-         {/* <p className='videoPublishAt'>{video?.snippet?.publishedAt}</p> */}
         </Link>
     </div>
   )

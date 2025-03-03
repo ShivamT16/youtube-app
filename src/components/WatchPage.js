@@ -5,7 +5,8 @@ import "./watchPage.css"
 import {LiveChat} from './LiveChat'
 import ShowComments from './ShowComments'
 import { YOUTUBE_VIDEO_COMMENTS_API, YOUTUBE_VIDEO_DETAIL_API } from '../utils/constants'
-import { convertStringsIntoLink } from '../utils/utilsFunctions'
+import { convertIntoMillions } from '../utils/utilsFunctions'
+import Description from './Description'
 
 const WatchPage = () => {
     const {closeSideDrawer} = useContext(AppContext)
@@ -35,7 +36,7 @@ const WatchPage = () => {
   return (
     <div className='watchPage-main'>
        <div className='watchPage-container'>
-        <div >
+        <div>
         <iframe
         className='videoFrame' 
         width="850" 
@@ -53,7 +54,22 @@ const WatchPage = () => {
 
         <div className='watchPage-video-detail'>
          <h2> {videoDetail?.snippet?.title} </h2>
-         <p className='watchPage-video-description' style={{whiteSpace: "pre-wrap"}}> {convertStringsIntoLink(videoDetail.snippet?.description)} </p>
+         
+         <div className='watchPage-video-btn'>
+         <h3 className='watchPage-video-btn'> <img className="user-icon" alt="user" src='https://icons.veryicon.com/png/o/miscellaneous/two-color-icon-library/user-286.png' />
+          {videoDetail?.snippet?.channelTitle} </h3>
+         
+         <div className='watchPage-video-btn'>
+          <button className='watchPage-like-Button'> <img className='watchPage-action-Btn' alt='likeBtn' src='https://cdn-icons-png.flaticon.com/128/9513/9513802.png' /> {convertIntoMillions(videoDetail?.statistics?.likeCount)} </button>
+          <button className='watchPage-dislike-Button'> <img className='watchPage-action-Btn' alt='dislikeBtn' src='https://cdn-icons-png.flaticon.com/128/4466/4466315.png' /> </button>
+         
+          </div>
+         </div>
+         
+         <div className='watchPage-video-description'>
+          <h5 className='watchPage-video-details'> {videoDetail?.statistics?.viewCount} views, {Date(videoDetail?.snippet?.publishedAt).slice(0,15)} </h5>
+          <p style={{whiteSpace: "pre-wrap"}}> <Description description={videoDetail.snippet?.description} /> </p>
+        </div>
         </div>
 
         <ShowComments comment={comments} />

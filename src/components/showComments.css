@@ -21,4 +21,15 @@
 .comment{
     margin: 0rem;
     font-size: small;
+    font-weight: 500;
+}
+
+.replies{
+    margin: 0rem 2rem ;
+    padding: 0rem 1rem;
+    border-left: 1px solid grey;
+}
+.replies-count{
+    font-weight: 600;
+    color: #065fd4;
 }

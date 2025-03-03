@@ -13,10 +13,10 @@ export const convertStringsIntoLink = (text) => {
 
 export const convertIntoMillions = (number) => {
 
-  if((number).toString().length > 6) {
+  if((number)?.toString()?.length > 6) {
     return Math.floor(number / 1000000) + 'M';
    }
-   else if((number).toString().length > 3) {
+   else if((number)?.toString()?.length > 3) {
     return Math.floor(number / 1000) + 'K'
    }
    else{

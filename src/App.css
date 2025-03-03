@@ -4,3 +4,7 @@
 .app-body{
   display: flex;
 }
+.description-btn{
+  font-weight: 500;
+  cursor: pointer;
+}

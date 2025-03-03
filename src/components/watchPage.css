@@ -13,8 +13,44 @@
 .watchPage-video-detail{
     width: 68%;
 }
+.watchPage-video-details{
+    margin: 10px 2px;
+}
 .watchPage-video-description{
     background-color: rgb(241, 237, 237);
     border-radius: 10px;
-    padding: 10px;
+    padding: 1px 10px 10px;
+}
+
+.watchPage-video-btn{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0rem .2rem;
+    margin: 0rem 0rem .5rem;
+}
+.watchPage-like-Button{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 1rem 0rem 0rem 1rem;
+    display: flex; 
+    align-items: center;
+    font-size: medium;
+    font-weight: 500;
+}
+.watchPage-dislike-Button{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0rem 1rem 1rem 0rem;
+    display: flex; 
+    align-items: center;
+    font-size: medium;
+    font-weight: 500;
+}
+.watchPage-action-Btn{
+    height: 1.5rem;
+    background-color: white;
+    border-radius: .5rem;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
 }
