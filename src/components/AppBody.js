@@ -12,9 +12,13 @@ const Body = () => {
   }, [])
 
   const getVideo = async () => {
+    try {
     const response = await fetch(YOUTUBE_VIDEOS_API)
     const data = await response.json()
     setVideos(data.items)
+    } catch (error) {
+    console.error(error)
+    }
   }
    
   return (

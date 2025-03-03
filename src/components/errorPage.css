@@ -1,0 +1,15 @@
+.error-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
+.error-status{
+    color: red;
+    font-weight: 500;
+}
+.error-return-link{
+    font-size: x-large;
+    font-weight: 600;
+}

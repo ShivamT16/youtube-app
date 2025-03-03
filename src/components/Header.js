@@ -26,10 +26,14 @@ const Header = () => {
     }, [searchQuery])
 
     const getSearchSuggestions = async () => {
-      const response = await fetch(YOUTUBE_SEARCH_API + searchQuery)
-      const json = await response.json()
-      setSearchSuggestions(json[1])
-      handleCacheResult({[searchQuery]: json[1]}) 
+      try {
+        const response = await fetch(YOUTUBE_SEARCH_API + searchQuery)
+        const json = await response.json()
+        setSearchSuggestions(json[1])
+        handleCacheResult({[searchQuery]: json[1]})
+      } catch (error) {
+        console.error(error)
+      }
     }
 
   return (

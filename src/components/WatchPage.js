@@ -22,15 +22,25 @@ const WatchPage = () => {
     }, [])
 
     const getVideoDetails = async () => {
-      const response = await fetch(YOUTUBE_VIDEO_DETAIL_API + searchParams.get('v'))
-      const json = await response.json()
-      setVideoDetail(json?.items[0])
+      try {
+        const response = await fetch(YOUTUBE_VIDEO_DETAIL_API + searchParams.get('v'))
+        const json = await response.json()
+        setVideoDetail(json?.items[0])
+      } 
+      catch (error) {
+        console.error(error)  
+      }     
     } 
 
     const getComments = async () => {
-      const response = await fetch(YOUTUBE_VIDEO_COMMENTS_API + searchParams.get('v'))
+      try {
+        const response = await fetch(YOUTUBE_VIDEO_COMMENTS_API + searchParams.get('v'))
       const json = await response.json()
       setComments(json?.items)
+      } 
+      catch (error) {
+        console.error(error)  
+      }     
     }
 
   return (
@@ -68,7 +78,7 @@ const WatchPage = () => {
          
          <div className='watchPage-video-description'>
           <h5 className='watchPage-video-details'> {videoDetail?.statistics?.viewCount} views, {Date(videoDetail?.snippet?.publishedAt).slice(0,15)} </h5>
-          <p style={{whiteSpace: "pre-wrap"}}> <Description description={videoDetail.snippet?.description} /> </p>
+          <Description description={videoDetail.snippet?.description} /> 
         </div>
         </div>
 

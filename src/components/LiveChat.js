@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react"
 import "./liveChat.css"
 import { AppContext } from "../context/AppContext"
+import { generateName, makeRandomCharacter } from "../utils/randomFunctions"
 
 export const LiveChat = () => {
     const {handleLiveChat, liveMessages} = useContext(AppContext)
@@ -8,9 +9,7 @@ export const LiveChat = () => {
     useEffect(() => {
 
       const i = setInterval(() => {
-
-        // handleLiveChat({name: "adam", message: Math.random() * 10 })
-
+        handleLiveChat({name: generateName(), message: makeRandomCharacter(10) })
         }, 500);
 
       return() =>{

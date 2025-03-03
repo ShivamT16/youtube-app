@@ -13,9 +13,14 @@ const SearchResult = () => {
   }, [searchedParams])
 
   const getVideos = async() => {
-    const results = await fetch(YOUTUBE_SEARCH_RESULTS_API+searchedParams.get('search_query'))
-    const json = await results.json()
-    setSearchResults(json?.items)
+     try {
+      const results = await fetch(YOUTUBE_SEARCH_RESULTS_API+searchedParams.get('search_query'))
+      const json = await results.json()
+      setSearchResults(json?.items)
+      } 
+     catch (error) {   
+      console.error(error)  
+      }     
   }
 
   return (

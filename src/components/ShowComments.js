@@ -1,6 +1,5 @@
 import './showComments.css'
 import { Link } from 'react-router-dom'
-import { convertStringsIntoLink } from '../utils/utilsFunctions'
 import Description from './Description'
 
 const ShowComments = ({comment}) => {
@@ -36,7 +35,7 @@ const ShowReplies = ({comment}) => {
         <img className='comments-userImage' alt="user" src={comment?.snippet?.authorProfileImageUrl } /> 
         <div>
         <Link className='comments-userName' to={comment?.snippet?.authorChannelUrl} >{comment?.snippet.authorDisplayName}</Link>
-        <p className='comment' style={{whiteSpace: "pre-wrap"}}> <Description description={comment?.snippet?.textOriginal} /> </p>
+        <span className='comment'> <Description description={comment?.snippet?.textOriginal} /> </span>
         </div>
     </div> 
 
