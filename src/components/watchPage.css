@@ -1,6 +1,5 @@
 .watchPage-main{
     padding: 1rem 3rem;
-    width: 100%;
     text-align: left;
 }
 .watchPage-container{
@@ -9,9 +8,11 @@
 }
 .videoFrame{
     border-radius: 1rem;
+    width: 37rem;
+    height: 20rem;
 }
 .watchPage-video-detail{
-    width: 68%;
+    width: 100%;
 }
 .watchPage-video-details{
     margin: 10px 2px;
@@ -53,4 +54,24 @@
     border-radius: .5rem;
     padding: 0.2rem 0.5rem;
     cursor: pointer;
+}
+
+@media screen and (min-width: 768px) { 
+ .videoFrame{
+    width: 42rem;
+    height: 24rem;
+ }
+}
+
+@media screen and (min-width: 1024px) { 
+    .watchPage-main{
+        width: 100%;
+    }
+    .videoFrame{
+       width: 52rem;
+       height: 32rem;
+    }
+    .watchPage-video-detail{
+        width: 66%;
+    }
 }

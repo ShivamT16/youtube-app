@@ -12,7 +12,7 @@ export const LiveChat = () => {
     useEffect(() => {
 
       const i = setInterval(() => {
-        dispatch(handleLiveChat({name: generateName(), message: makeRandomCharacter(10) }))
+        // dispatch(handleLiveChat({name: generateName(), message: makeRandomCharacter(10) }))
         }, 500);
 
       return() =>{

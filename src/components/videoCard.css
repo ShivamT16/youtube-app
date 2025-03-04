@@ -1,12 +1,10 @@
 .videoCard-main{
-    /* border: 1px solid red; */
     width: min-content;
     text-align: left;
     margin: 1rem;
     cursor: pointer;
 }
 .videoCard{
-    /* border: 1px solid black; */
     color: black;
     text-decoration: none;
 }
@@ -17,7 +15,6 @@
     border-radius: 0rem;
 }
 .videoTitle{
-    /* border: 1px solid red; */
     margin: .2rem 0rem;
     font-weight: 500;
 }

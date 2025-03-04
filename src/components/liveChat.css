@@ -1,8 +1,5 @@
 .liveChat-main{
-    width: 100%;
-    padding: .2rem;
-    border: 1px solid lightgrey;
-    border-radius: 1rem;
+    display: none;
 }
 .liveChat-heading{
     padding: 0rem 2rem;
@@ -38,4 +35,14 @@
 }
 .chat-message{
    margin: .4rem 0rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .liveChat-main{
+        display: block;
+        width: 100%;
+        padding: .2rem;
+        border: 1px solid lightgrey;
+        border-radius: 1rem;
+    }
 }

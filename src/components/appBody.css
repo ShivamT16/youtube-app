@@ -1,7 +1,7 @@
 .video-body{
-    /* border: 1px solid red; */
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0rem;
     width: 100%;
     padding: 0rem 2rem;
