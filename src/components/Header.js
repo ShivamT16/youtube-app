@@ -63,6 +63,7 @@ const Header = () => {
         </div>
 
         <img className="user-icon" alt="user" src='https://icons.veryicon.com/png/o/miscellaneous/two-color-icon-library/user-286.png' />
+
     </header>
   )
 }
