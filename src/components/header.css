@@ -48,11 +48,11 @@
 .suggestions{
     position: fixed;
     background-color: white;
-    width: 26rem;
+    width: 12rem;
     border-radius: 1rem;
     box-shadow: 0 0 4px gray;
     text-align: left;
-    margin: .2rem 0.5rem;
+    margin: .2rem 0rem;
     padding: .8rem 0rem;
 }
 .suggestion-list{
@@ -86,6 +86,10 @@
         border-top-right-radius: 1.5rem;
         border-bottom-right-radius: 1.5rem;
     }
+    .suggestions{
+        width: 22rem;;
+        margin: .2rem 0.5rem;
+    }
 }
    
 @media screen and (min-width: 1024px) { 
@@ -102,5 +106,9 @@
         border: 1px solid gray;
         border-top-right-radius: 1.5rem;
         border-bottom-right-radius: 1.5rem;
+    }
+    .suggestions{
+        width: 26rem;;
+        margin: .2rem 0.5rem;
     }
 }
