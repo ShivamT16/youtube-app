@@ -34,7 +34,7 @@ const ShowReplies = ({comment}) => {
     <div className='comments-card' key={comment?.id}>
         <img className='comments-userImage' alt="user" src={comment?.snippet?.authorProfileImageUrl } /> 
         <div>
-        <Link className='comments-userName' to={comment?.snippet?.authorChannelUrl} >{comment?.snippet.authorDisplayName}</Link>
+        <Link className='comments-userName' target='blank' to={comment?.snippet?.authorChannelUrl} >{comment?.snippet.authorDisplayName}</Link>
         <span className='comment'> <Description description={comment?.snippet?.textOriginal} /> </span>
         </div>
     </div> 
